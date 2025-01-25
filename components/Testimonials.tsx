@@ -48,11 +48,7 @@ export default function Testimonials() {
 
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Dynamic Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-        <div className="absolute inset-0 bg-[url('/patterns/testimonials.svg')] opacity-5" />
-      </div>
+
 
       <div className="container mx-auto px-4">
         {/* Section Header */}
@@ -128,6 +124,7 @@ export default function Testimonials() {
               whileTap={{ scale: 0.9 }}
               onClick={prevTestimonial}
               className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+              aria-label="Previous Testimonial"
             >
               <ArrowRight className="w-6 h-6 text-primary" />
             </motion.button>
@@ -136,6 +133,9 @@ export default function Testimonials() {
               whileTap={{ scale: 0.9 }}
               onClick={nextTestimonial}
               className="p-3 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
+              aria-label="Next Testimonial"
+              title="التالي"
+              
             >
               <ArrowLeft className="w-6 h-6 text-primary" />
             </motion.button>

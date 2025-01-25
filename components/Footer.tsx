@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Clock, ArrowUpRight } from "lucide-react"
+import { Facebook,  Instagram,  Phone, Mail, MapPin, Clock, ArrowUpRight, X } from "lucide-react"
 
 const quickLinks = [
   { title: "خدماتنا", href: "#services" },
@@ -54,19 +54,57 @@ export default function Footer() {
               شركة رائدة في مجال الدعاية والإعلان والتسويق الرقمي، نقدم حلولاً إبداعية متكاملة لنجاح عملائنا
             </p>
             <div className="flex gap-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ scale: 1.1 }}
-                  className="bg-primary-foreground/10 p-2 rounded-full hover:bg-primary-foreground/20 transition-colors"
+              <motion.a
+                href="https://www.facebook.com/golden.moon.compa?mibextid=qi2Omg&rdid=9UEujZCHUXTpmI39&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19EWAR5kSM%2F%3Fmibextid%3Dqi2Omg#"
+                whileHover={{ scale: 1.1 }}
+                className="bg-primary-foreground/10 p-2 rounded-full hover:bg-primary-foreground/20 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/golden_moon_company"
+                whileHover={{ scale: 1.1 }}
+                className="bg-primary-foreground/10 p-2 rounded-full hover:bg-primary-foreground/20 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://x.com/Golden_Moon2024"
+                whileHover={{ scale: 1.1 }}
+                className="bg-primary-foreground/10 p-2 rounded-full hover:bg-primary-foreground/20 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <X className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://www.tiktok.com/@golden.moon.company"
+                whileHover={{ scale: 1.1 }}
+                className="bg-primary-foreground/10 p-2 rounded-full hover:bg-primary-foreground/20 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  width="20" 
+                  height="20" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                  className="w-5 h-5"
                 >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </motion.a>
             </div>
           </div>
-
           {/* Quick Links */}
           <div>
             <h3 className="text-xl font-bold mb-6">روابط سريعة</h3>

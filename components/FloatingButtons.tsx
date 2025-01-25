@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Phone, Contact2 } from "lucide-react"
+import { Phone, MessageCircle } from "lucide-react"
 
 export default function FloatingButtons() {
   return (
@@ -14,7 +14,7 @@ export default function FloatingButtons() {
         whileTap={{ scale: 0.9 }}
         className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-shadow"
       >
-        <Contact2 className="w-6 h-6" />
+        <MessageCircle className="w-6 h-6" />
       </motion.a>
 
       <motion.a

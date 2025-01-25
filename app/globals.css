@@ -71,22 +71,23 @@
     @apply py-12 sm:py-16 lg:py-20;
   }
 
-  .heading-1 {
-    @apply text-3xl font-bold sm:text-4xl lg:text-5xl;
-  }
+  @layer components {
+    .heading-1 {
+      @apply text-2xl font-bold sm:text-3xl lg:text-4xl;
+    }
 
-  .heading-2 {
-    @apply text-2xl font-bold sm:text-3xl lg:text-4xl;
-  }
+    .heading-2 {
+      @apply text-xl font-bold sm:text-2xl lg:text-3xl;
+    }
 
-  .heading-3 {
-    @apply text-xl font-bold sm:text-2xl lg:text-3xl;
-  }
+    .heading-3 {
+      @apply text-lg font-bold sm:text-xl lg:text-2xl;
+    }
 
-  .paragraph {
-    @apply text-base sm:text-lg leading-relaxed;
+    .paragraph {
+      @apply text-sm sm:text-base leading-relaxed;
+    }
   }
-
   .card {
     @apply bg-card rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300;
   }

@@ -1,12 +1,3 @@
-// import Hero from "./components/Hero"
-// import Services from "./components/Services"
-// import FeaturedServices from "./components/FeaturedServices"
-// import AboutUs from "./components/AboutUs"
-// import Testimonials from "./components/Testimonials"
-// import Partners from "./components/Partners"
-// import Contact from "./components/Contact"
-// import CallToAction from "./components/CallToAction"
-
 import AboutUs from "@/components/AboutUs";
 import Advertising from "@/components/Advertising";
 import CallToAction from "@/components/CallToAction";
@@ -19,23 +10,32 @@ import Partners from "@/components/Partners";
 import SocialMediaPower from "@/components/SocialMediaPower";
 import Testimonials from "@/components/Testimonials";
 import WebDevelopment from "@/components/WebDevelopment";
+import SocialMediaCards from '@/components/SocialMediaCards';
+import HospitalsBanner from "@/components/HospitalsBanner";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <AboutUs />
-      <FeaturedServices />
-      <DisplayScreens />
-      <CallToAction />
-      <SocialMediaPower />
       <Advertising />
-<ContactBanner />
+      <ContactBanner />
+      <SocialMediaCards />
+      <HospitalsBanner />
+      <FeaturedServices />
+      
+      <DisplayScreens />
+
+      <CallToAction />
+
+  
+      <SocialMediaPower />
+      <ContactBanner />
       <WebDevelopment />
 
       <Testimonials />
       <Partners />
-      
+
       <Contact />
     </>
   );

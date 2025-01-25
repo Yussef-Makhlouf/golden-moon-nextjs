@@ -64,6 +64,7 @@ export default function Header() {
               variant="default"
               size="sm"
               className="hidden sm:inline-flex text-xs sm:text-sm whitespace-nowrap"
+              aria-label="Call Us"
             >
               <Phone className="h-3 w-3 sm:h-4 sm:w-4 ml-1.5" />
               0562924514
@@ -71,6 +72,7 @@ export default function Header() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="lg:hidden -ml-1.5 p-1.5 rounded-md hover:bg-muted"
+              aria-label="Toggle Menu"
             >
               {isMenuOpen ? (
                 <X className="h-5 w-5" />
@@ -106,9 +108,12 @@ export default function Header() {
                   variant="default"
                   size="sm"
                   className="w-full mt-4 text-sm"
+                  aria-label="Call Us"
                 >
                   <Phone className="ml-2 h-4 w-4" />
-                  0562924514
+                <Link href="tel:0562924514">
+                0562924514
+                </Link>
                 </Button>
               </div>
             </motion.div>

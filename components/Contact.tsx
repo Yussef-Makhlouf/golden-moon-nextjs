@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import {Phone, Mail, Clock, Send, Building2, Contact2 } from "lucide-react"
+import {Phone, Mail, Clock, Send, Building2 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -34,13 +34,8 @@ const contactInfo = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Dynamic Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-        <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
-      </div>
-
+    <section id="اتصل بنا" className="py-24 relative overflow-hidden" >
+ 
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Contact Form Section */}
@@ -95,6 +90,8 @@ export default function Contact() {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-primary text-primary-foreground rounded-xl py-3 px-6 flex items-center justify-center gap-2"
+                  type="submit"
+                  aria-label="إرسال الرسالة"
                 >
                   <Send className="w-5 h-5" />
                   <span>إرسال الرسالة</span>
@@ -125,7 +122,11 @@ export default function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex gap-6"
+                  className="flex gap-6 cursor-pointer hover:bg-card/50 p-4 rounded-2xl transition-colors"
+                  onClick={() => {
+                    if (info.icon === Phone) window.location.href = 'tel:0562924514'
+                    if (info.icon === Mail) window.location.href = 'mailto:info@goldenmoon.com'
+                  }}
                 >
                   <div className={`w-12 h-12 rounded-2xl bg-card flex items-center justify-center ${info.color}`}>
                     <info.icon className="w-6 h-6" />
@@ -138,27 +139,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Quick Contact Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="https://wa.me/966562924514"
-                target="_blank"
-                className="flex items-center gap-2 bg-green-500 text-white rounded-xl px-6 py-3"
-              >
-                <Contact2 className="w-5 h-5" />
-                <span>واتساب</span>
-              </motion.a>
-              
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                href="tel:0562924514"
-                className="flex items-center gap-2 bg-primary text-primary-foreground rounded-xl px-6 py-3"
-              >
-                <Phone className="w-5 h-5" />
-                <span>اتصل الآن</span>
-              </motion.a>
-            </div>
           </div>
         </div>
       </div>

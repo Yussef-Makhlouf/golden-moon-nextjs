@@ -1,188 +1,139 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Globe, Search, ShoppingBag, Smartphone, Gauge, Lock } from "lucide-react"
-import Image from "next/image"
+import { Search, ShoppingBag, Smartphone} from "lucide-react"
+import Link from "next/link"
+
 
 const features = [
   {
-    title: "تصميم مواقع احترافية",
-    description: "تصاميم عصرية تعكس هوية علامتك التجارية وتجذب العملاء",
-    icon: Globe,
-    stats: "+200 موقع",
+    title: "تصميم مواقع متجاوبة",
+    description: "تصاميم عصرية تعمل على جميع الأجهزة بكفاءة عالية",
+    icon: Smartphone,
+    stats: "100% توافق",
+    details: ["تجربة مستخدم سلسة", "سرعة تحميل عالية", "تصميم عصري", "حماية SSL مجانية"]
   },
   {
-    title: "متاجر إلكترونية متكاملة",
-    description: "حلول تجارة إلكترونية متطورة مع أنظمة دفع وشحن متكاملة",
+    title: "متاجر إلكترونية",
+    description: "منصات بيع احترافية مع أنظمة دفع آمنة",
     icon: ShoppingBag,
-    stats: "+50 متجر",
+    stats: "حلول متكاملة",
+    details: ["إدارة المخزون", "بوابات دفع متعددة", "تقارير مبيعات", "دعم فني 24/7"]
   },
   {
     title: "تحسين محركات البحث",
-    description: "تحسين ظهور موقعك في نتائج البحث وزيادة الزيارات العضوية",
+    description: "تصدر نتائج البحث وزيادة الزيارات العضوية",
     icon: Search,
     stats: "تصدر النتائج",
-  },
-  {
-    title: "تجربة مستخدم مثالية",
-    description: "واجهات سهلة الاستخدام تعمل بكفاءة على جميع الأجهزة",
-    icon: Smartphone,
-    stats: "100% تجاوب",
-  },
+    details: ["تحليل الكلمات", "تحسين المحتوى", "تقارير شهرية", "روابط خلفية قوية"]
+  }
 ]
-
 const technologies = [
   { name: "React", color: "bg-blue-500" },
   { name: "Next.js", color: "bg-black" },
-  { name: "WordPress", color: "bg-blue-600" },
+  { name: "Node.js", color: "bg-blue-600" },
   { name: "Shopify", color: "bg-green-500" },
-  { name: "WooCommerce", color: "bg-purple-500" },
+  { name: "Angular", color: "bg-purple-500" },
+  { name: "HTML", color: "bg-green-400" },
+  {name: "CSS", color: "bg-blue-400" },
+  { name: "JavaScript", color: "bg-yellow-500" },
+
+
+
 ]
 
 export default function WebDevelopment() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
-      {/* خلفية الكود */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-background">
-        <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
-      </div>
-
-      <div className="container mx-auto relative">
+    <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 dark:from-gray-950 dark:to-gray-900">
+      <div className="container mx-auto">
         {/* العنوان الرئيسي */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-20 space-y-4"
-        >
-          <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-medium mb-4">
-            تطوير المواقع والمتاجر الإلكترونية
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-            نبني تواجدك الرقمي
-            <span className="text-primary block mt-2">بأحدث التقنيات العالمية</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            نقدم حلولاً متكاملة لتطوير المواقع والمتاجر الإلكترونية مع التركيز على تحسين محركات البحث وتجربة المستخدم
-          </p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* القسم المرئي */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative order-2 lg:order-1"
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <motion.span 
+            className="text-xs md:text-sm text-primary/80 dark:text-primary/60 uppercase tracking-wider mb-4 block"
           >
-            {/* الميزات */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="bg-card hover:bg-card/80 rounded-2xl p-6 transition-all duration-300 h-full border border-border/50 hover:border-primary/50">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{feature.description}</p>
-                    <div className="text-primary font-bold">{feature.stats}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+            تطوير المواقع والمتاجر الإلكترونية
+          </motion.span>
+          <motion.h2 
+            className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight"
+          >
+            نبني حضورك الرقمي
+            <span className="text-primary block mt-2">بأحدث التقنيات العالمية</span>
+          </motion.h2>
+          <motion.p 
+            className="text-sm md:text-base text-muted-foreground leading-relaxed"
+          >
+            نقدم حلولاً تقنية متكاملة تجمع بين التصميم الإبداعي والأداء العالي
+          </motion.p>
+        </div>
 
-            {/* التقنيات */}
+        {/* العناصر الرئيسية */}
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 mb-20">
+          {features.map((feature, index) => (
             <motion.div
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-8"
+              transition={{ delay: index * 0.2 }}
+              className="group"
             >
-              <h3 className="text-lg font-semibold mb-4">التقنيات المستخدمة</h3>
-              <div className="flex flex-wrap gap-3">
-                {technologies.map((tech, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={`${tech.color} bg-opacity-10 px-4 py-2 rounded-full text-sm font-medium`}
-                  >
-                    {tech.name}
-                  </motion.div>
-                ))}
+              <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 h-full border border-gray-100 dark:border-gray-800 hover:border-primary/20 dark:hover:border-primary/20 transition-all duration-300">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/5 dark:bg-primary/10 flex items-center justify-center">
+                    <feature.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-semibold mb-1">{feature.title}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  {feature.details.map((detail, idx) => (
+                    <div key={idx} className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/30" />
+                      <span className="text-xs md:text-sm text-muted-foreground">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs md:text-sm font-medium text-primary">{feature.stats}</span>
+                    <motion.button
+                      whileHover={{ x: 5 }}
+
+                      className="text-xs md:text-sm text-muted-foreground hover:text-primary transition-colors"
+                      aria-label="تواصل معنا"
+                    >
+                      <Link href="tel:0563009155">تواصل معنا
+                      
+                      </Link>
+                    </motion.button>
+                  </div>
+                </div>
               </div>
             </motion.div>
-          </motion.div>
+          ))}
+        </div>
 
-          {/* القسم التفاعلي */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative order-1 lg:order-2"
-          >
-            <div className="relative rounded-3xl overflow-hidden">
-              <Image
-                src="/img20.avif"
-                width={1000}
-                height={1000}
-                alt="تطوير المواقع"
-                className="w-full aspect-[4/3] object-cover"
-              />
-              
-              {/* بطاقات معلومات متحركة */}
+        {/* قسم التقنيات */}
+        <div className="text-center">
+          <h3 className="text-sm md:text-base font-medium mb-6">التقنيات المستخدمة</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {technologies.map((tech, index) => (
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute top-8 right-8 bg-black/80 backdrop-blur-xl rounded-2xl p-4 text-white"
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1 }}
+                className={`px-4 py-2 rounded-full text-xs md:text-sm ${tech.color} bg-opacity-10`}
               >
-                <div className="flex items-center gap-3">
-                  <Gauge className="w-5 h-5 text-green-400" />
-                  <div>
-                    <div className="text-sm opacity-80">سرعة الموقع</div>
-                    <div className="text-lg font-bold">98/100</div>
-                  </div>
-                </div>
+                {tech.name}
               </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute bottom-8 left-8 bg-black/80 backdrop-blur-xl rounded-2xl p-4 text-white"
-              >
-                <div className="flex items-center gap-3">
-                  <Lock className="w-5 h-5 text-blue-400" />
-                  <div>
-                    <div className="text-sm opacity-80">حماية SSL</div>
-                    <div className="text-lg font-bold">مؤمن 100%</div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* زر الدعوة للعمل */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="absolute -bottom-6 right-8 left-8"
-            >
-              <button className="w-full bg-primary text-primary-foreground px-8 py-4 rounded-xl font-medium hover:bg-primary/90 transition-colors duration-300 shadow-lg">
-                احصل على عرض سعر مجاني
-              </button>
-            </motion.div>
-          </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   )
-} 
+}

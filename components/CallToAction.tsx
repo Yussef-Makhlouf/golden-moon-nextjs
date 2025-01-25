@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Phone, ArrowUpRight, Contact2 } from "lucide-react"
+import { Phone, ArrowUpRight, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
 const contactNumbers = [
@@ -16,7 +16,7 @@ export default function CallToAction() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/cta-bg.jpg"
+          src="/hero.webp"
           alt="خلفية"
           fill
           className="object-cover"
@@ -83,7 +83,7 @@ export default function CallToAction() {
                   whileHover={{ scale: 1.02 }}
                   className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white rounded-xl py-4 px-6 w-full transition-colors"
                 >
-                  <Contact2 className="w-5 h-5" />
+                  <MessageCircle className="w-5 h-5" />
                   <span>تواصل عبر الواتساب</span>
                 </motion.a>
 

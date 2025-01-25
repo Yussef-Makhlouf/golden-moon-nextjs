@@ -1,6 +1,5 @@
 "use client"
-
-import { Card } from "@/components/ui/card"
+import Image from "next/image"
 import { Megaphone, Globe, Palette, Printer, MonitorSmartphone, Camera } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -81,7 +80,7 @@ export default function Services() {
               <div className="relative aspect-square cursor-pointer">
                 {/* الصورة الرئيسية */}
                 <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
